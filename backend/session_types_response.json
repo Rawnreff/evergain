@@ -1,0 +1,177 @@
+{
+  "Antagonist": [
+    {
+      "category": "Antagonist",
+      "description": "Antagonist Upper",
+      "name": "Chest & Back"
+    }
+  ],
+  "Full Body": [
+    {
+      "category": "Full Body",
+      "description": "All Muscle Groups",
+      "name": "Full Body"
+    }
+  ],
+  "Goal": [
+    {
+      "category": "Goal",
+      "description": "Muscle Growth Focus",
+      "name": "Hypertrophy"
+    },
+    {
+      "category": "Goal",
+      "description": "Heavy Compound Focus",
+      "name": "Strength"
+    },
+    {
+      "category": "Goal",
+      "description": "Explosive Movements",
+      "name": "Power"
+    },
+    {
+      "category": "Goal",
+      "description": "Cardio/Endurance",
+      "name": "Conditioning"
+    }
+  ],
+  "Isolation": [
+    {
+      "category": "Isolation",
+      "description": "Biceps/Triceps/Forearms",
+      "name": "Arms"
+    },
+    {
+      "category": "Isolation",
+      "description": "Legs Focus",
+      "name": "Quads & Calves"
+    },
+    {
+      "category": "Isolation",
+      "description": "Hip Focus",
+      "name": "Hamstrings & Glutes"
+    },
+    {
+      "category": "Isolation",
+      "description": "Abs/Obliques/Lower Back",
+      "name": "Core"
+    }
+  ],
+  "Movement Pattern": [
+    {
+      "category": "Movement Pattern",
+      "description": "Hamstrings/Glutes/Lower Back",
+      "name": "Posterior Chain"
+    },
+    {
+      "category": "Movement Pattern",
+      "description": "Quads/Abs/Chest",
+      "name": "Anterior Chain"
+    }
+  ],
+  "Recovery": [
+    {
+      "category": "Recovery",
+      "description": "Recovery",
+      "name": "Rest"
+    },
+    {
+      "category": "Recovery",
+      "description": "Light Cardio/Mobility",
+      "name": "Active Recovery"
+    },
+    {
+      "category": "Recovery",
+      "description": "Flexibility/Joint Health",
+      "name": "Mobility"
+    },
+    {
+      "category": "Recovery",
+      "description": "Light Intensity Week",
+      "name": "Deload"
+    }
+  ],
+  "Regional": [
+    {
+      "category": "Regional",
+      "description": "Chest/Back/Shoulders",
+      "name": "Torso"
+    },
+    {
+      "category": "Regional",
+      "description": "Back/Rear Delts",
+      "name": "Posterior Upper"
+    },
+    {
+      "category": "Regional",
+      "description": "Chest/Front Delts",
+      "name": "Anterior Upper"
+    }
+  ],
+  "Specialty": [
+    {
+      "category": "Specialty",
+      "description": "Arnold Style",
+      "name": "Shoulders & Arms"
+    },
+    {
+      "category": "Specialty",
+      "description": "Targeting Lagging Muscles",
+      "name": "Weak Point"
+    },
+    {
+      "category": "Specialty",
+      "description": "Small Muscle Isolation",
+      "name": "Accessory"
+    }
+  ],
+  "Split": [
+    {
+      "category": "Split",
+      "description": "Chest/Shoulders/Triceps",
+      "name": "Push"
+    },
+    {
+      "category": "Split",
+      "description": "Back/Biceps/Rear Delts",
+      "name": "Pull"
+    },
+    {
+      "category": "Split",
+      "description": "Quads/Hamstrings/Glutes/Calves",
+      "name": "Legs"
+    },
+    {
+      "category": "Split",
+      "description": "Entire Upper Body",
+      "name": "Upper"
+    },
+    {
+      "category": "Split",
+      "description": "Entire Lower Body",
+      "name": "Lower"
+    }
+  ],
+  "Variation": [
+    {
+      "category": "Variation",
+      "description": "Variation 1",
+      "name": "Push A"
+    },
+    {
+      "category": "Variation",
+      "description": "Variation 2",
+      "name": "Push B"
+    },
+    {
+      "category": "Variation",
+      "description": "Variation 1",
+      "name": "Pull A"
+    },
+    {
+      "category": "Variation",
+      "description": "Variation 2",
+      "name": "Pull B"
+    }
+  ]
+}
