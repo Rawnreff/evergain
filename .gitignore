@@ -1,0 +1,4 @@
+.kiro/
+.venv/
+.vscode/
+TIMEZONE_FIX.md
