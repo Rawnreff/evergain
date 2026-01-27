@@ -9,7 +9,7 @@ import { Platform } from 'react-native';
 
 // IMPORTANT: Make sure your phone is on the same WiFi network as your computer!
 // If backend IP changes, update the IP below
-const LOCAL_IP = '192.168.1.4'; // Your computer's local IP address
+const LOCAL_IP = '10.218.19.73'; // Your computer's local IP address
 
 const getApiUrl = () => {
     if (Platform.OS === 'web') {

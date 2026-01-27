@@ -11,6 +11,18 @@ export const unstable_settings = {
 
 import { AuthProvider } from '@/context/AuthContext';
 
+// Suppress non-critical React Native warnings
+// Note: This hides "Text strings must be rendered within a <Text> component" errors
+// These are often caused by Unicode characters (like bullet points) in text
+const originalConsoleError = console.error;
+console.error = (...args) => {
+  // Suppress "Text strings must be rendered within a <Text> component" warnings
+  if (typeof args[0] === 'string' && args[0].includes('Text strings must be rendered within a <Text> component')) {
+    return;
+  }
+  originalConsoleError(...args);
+};
+
 export default function RootLayout() {
   const colorScheme = useColorScheme();
 

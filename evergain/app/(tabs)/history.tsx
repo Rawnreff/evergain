@@ -5,9 +5,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '@/constants/Colors';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { useFocusEffect } from '@react-navigation/native';
+import { API_CONFIG } from '@/services/apiConfig';
 
-// API Configuration
-const API_URL = 'http://192.168.1.4:8080/api';
+// Get API URL based on platform
+const API_URL = API_CONFIG.getBaseUrl(Platform.OS);
 
 interface ExerciseLog {
     exercise: string;
@@ -90,7 +91,7 @@ export default function HistoryScreen() {
         setSelectedSession(session);
         setDetailVisible(true);
         setLoadingDetail(true);
-        
+
         // Fetch workout sets for this session
         try {
             const response = await fetch(`${API_URL}/sessions/${session._id}/workout-sets`);
@@ -214,12 +215,12 @@ export default function HistoryScreen() {
                                             </View>
                                             {!session.is_active && session.duration_minutes && (
                                                 <Text style={styles.durationText}>
-                                                    • {session.duration_minutes.toFixed(0)} min
+                                                    {`• ${session.duration_minutes.toFixed(0)} min`}
                                                 </Text>
                                             )}
                                         </View>
                                         <Text style={styles.volumeSubtext}>
-                                            {session.total_sets} sets • {session.total_volume} kg
+                                            {`${session.total_sets} sets • ${session.total_volume} kg`}
                                         </Text>
                                     </View>
                                     <IconSymbol name="chevron.right" size={20} color={Colors.textSecondary} />
@@ -244,7 +245,7 @@ export default function HistoryScreen() {
                             <View>
                                 <Text style={styles.modalTitle}>{selectedSession.session_type}</Text>
                                 <Text style={styles.modalSubtitle}>
-                                    {formatDate(selectedSession.started_at).full} • {selectedSession.duration_minutes?.toFixed(0) || '0'} min
+                                    {`${formatDate(selectedSession.started_at).full} • ${selectedSession.duration_minutes?.toFixed(0) || '0'} min`}
                                 </Text>
                             </View>
                             <TouchableOpacity onPress={() => setDetailVisible(false)}>

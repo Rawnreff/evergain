@@ -8,8 +8,10 @@ import { IconSymbol } from '@/components/ui/icon-symbol';
 import { useRouter } from 'expo-router';
 import { useAuth } from '@/context/AuthContext';
 import { useFocusEffect } from '@react-navigation/native';
+import { API_CONFIG } from '@/services/apiConfig';
 
-const API_URL = 'http://192.168.1.4:8080/api';
+// Get API URL based on platform
+const API_URL = API_CONFIG.getBaseUrl(Platform.OS);
 
 interface Session {
   _id: string;
@@ -220,7 +222,7 @@ export default function DashboardScreen() {
                 </View>
                 <View style={styles.activityInfo}>
                   <Text style={styles.activityTitle}>{session.session_type}</Text>
-                  <Text style={styles.activityDate}>{getRelativeTime(session.started_at)} • {formatGMT7(session.started_at)}</Text>
+                  <Text style={styles.activityDate}>{`${getRelativeTime(session.started_at)} • ${formatGMT7(session.started_at)}`}</Text>
                 </View>
                 <View style={[styles.activityStatus, !session.is_active && { backgroundColor: '#ECFDF5' }]}>
                   <Text style={[styles.activityStatusText, !session.is_active && { color: '#059669' }]}>

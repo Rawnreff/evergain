@@ -5,10 +5,11 @@ import { Colors } from '@/constants/Colors';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useLocalSearchParams } from 'expo-router';
+import { API_CONFIG } from '@/services/apiConfig';
 
-// API Base URL - Using computer's IP address for Android Emulator
-// Change this to your computer's IP if it changes
-const API_URL = 'http://192.168.1.4:8080/api';
+// Get API URL based on platform - Now using centralized config!
+// To change IP: Update LOCAL_IP in evergain/services/apiConfig.ts
+const API_URL = API_CONFIG.getBaseUrl(Platform.OS);
 
 // Types
 interface SessionType {
@@ -295,7 +296,7 @@ export default function LoggerScreen() {
 
                             if (response.ok) {
                                 const completedSession = await response.json();
-                                
+
                                 // Clear all session-related state
                                 setActiveSession(null);
                                 setSelectedExercise(null);
@@ -307,7 +308,7 @@ export default function LoggerScreen() {
                                 setRPE('');
                                 setNotes('');
                                 setSets('1');
-                                
+
                                 // Show completion alert
                                 Alert.alert(
                                     'Session Complete! 🎉',
@@ -609,7 +610,7 @@ export default function LoggerScreen() {
                     <Text style={styles.headerTitle}>Workout Logger</Text>
                     {activeSession && (
                         <Text style={styles.headerSubtitle}>
-                            {activeSession.session_type} • {sessionDuration}
+                            {`${activeSession.session_type} • ${sessionDuration}`}
                         </Text>
                     )}
                 </View>
@@ -656,7 +657,7 @@ export default function LoggerScreen() {
                             <View style={styles.sessionInfo}>
                                 <Text style={styles.sessionType}>{activeSession.session_type}</Text>
                                 <Text style={styles.sessionStats}>
-                                    {activeSession.total_sets} sets • {activeSession.total_volume} kg
+                                    {`${activeSession.total_sets} sets • ${activeSession.total_volume} kg`}
                                 </Text>
                             </View>
                             <TouchableOpacity
@@ -685,8 +686,7 @@ export default function LoggerScreen() {
                             </Text>
                             {selectedExercise && (
                                 <Text style={styles.muscleGroup}>
-                                    {selectedExercise.muscle_group}
-                                    {selectedExercise.secondary && ` • ${selectedExercise.secondary}`}
+                                    {`${selectedExercise.muscle_group}${selectedExercise.secondary ? ` • ${selectedExercise.secondary}` : ''}`}
                                 </Text>
                             )}
                         </View>
@@ -908,7 +908,7 @@ export default function LoggerScreen() {
                         <Text style={styles.modalTitle}>
                             Select Exercise
                             {activeSession && (
-                                <Text style={styles.modalSubtitle}> • {activeSession.session_type}</Text>
+                                <Text style={styles.modalSubtitle}>{` • ${activeSession.session_type}`}</Text>
                             )}
                         </Text>
                         <TouchableOpacity onPress={() => setExercisePickerVisible(false)}>

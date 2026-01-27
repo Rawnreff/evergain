@@ -12,7 +12,7 @@
 
 export const API_CONFIG = {
     // Your computer's local IP address
-    LOCAL_IP: '192.168.1.5',
+    LOCAL_IP: '10.218.19.73',
 
     // Backend port
     PORT: 8080,

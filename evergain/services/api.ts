@@ -2,7 +2,7 @@ import { Platform } from 'react-native';
 
 // API URL Configuration - Must match authService.ts
 // IMPORTANT: Update LOCAL_IP if your computer's IP changes
-const LOCAL_IP = '192.168.1.5';
+const LOCAL_IP = '10.218.19.73';
 
 const getBaseUrl = () => {
     if (Platform.OS === 'web') {
